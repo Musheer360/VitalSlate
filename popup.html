@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+    <head>
+        <title>VitalSlate</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="header-content">
+                    <h1>VitalSlate</h1>
+                    <div class="header-controls">
+                        <button id="sound-toggle" class="icon-btn">
+                            <svg
+                                class="sound-on"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                            </svg>
+                            <svg
+                                class="sound-off"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                                <line x1="23" y1="9" x2="17" y2="15" />
+                                <line x1="17" y1="9" x2="23" y2="15" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="master-toggle">
+                    <span>Enable All Reminders</span>
+                    <label class="switch">
+                        <input type="checkbox" id="master-toggle" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </header>
+
+            <main>
+                <div class="reminder-grid">
+                    <div class="reminder-card">
+                        <div class="card-header">
+                            <h3>20-20-20 Rule</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="twenty-toggle" />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="progress">
+                            <div
+                                id="twenty-progress"
+                                class="progress-bar"
+                            ></div>
+                        </div>
+                        <p>Every 20 minutes</p>
+                    </div>
+
+                    <div class="reminder-card">
+                        <div class="card-header">
+                            <h3>Movement</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="movement-toggle" />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="progress">
+                            <div
+                                id="movement-progress"
+                                class="progress-bar"
+                            ></div>
+                        </div>
+                        <div class="interval">
+                            <input
+                                type="number"
+                                id="movement-interval"
+                                min="1"
+                                max="240"
+                                value="60"
+                            />
+                            <span>min</span>
+                        </div>
+                    </div>
+
+                    <div class="reminder-card">
+                        <div class="card-header">
+                            <h3>Hydration</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="hydration-toggle" />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="progress">
+                            <div
+                                id="hydration-progress"
+                                class="progress-bar"
+                            ></div>
+                        </div>
+                        <div class="interval">
+                            <input
+                                type="number"
+                                id="hydration-interval"
+                                min="1"
+                                max="240"
+                                value="60"
+                            />
+                            <span>min</span>
+                        </div>
+                    </div>
+
+                    <div class="reminder-card">
+                        <div class="card-header">
+                            <h3>Posture</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="posture-toggle" />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="progress">
+                            <div
+                                id="posture-progress"
+                                class="progress-bar"
+                            ></div>
+                        </div>
+                        <div class="interval">
+                            <input
+                                type="number"
+                                id="posture-interval"
+                                min="1"
+                                max="240"
+                                value="30"
+                            />
+                            <span>min</span>
+                        </div>
+                    </div>
+
+                    <div class="reminder-card">
+                        <div class="card-header">
+                            <h3>Stretch</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="stretch-toggle" />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="progress">
+                            <div
+                                id="stretch-progress"
+                                class="progress-bar"
+                            ></div>
+                        </div>
+                        <div class="interval">
+                            <input
+                                type="number"
+                                id="stretch-interval"
+                                min="1"
+                                max="240"
+                                value="120"
+                            />
+                            <span>min</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>

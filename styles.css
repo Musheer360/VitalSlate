@@ -1,0 +1,250 @@
+:root {
+    --primary: #00e5b0; /* Bright teal accent */
+    --background: #000000; /* AMOLED black */
+    --surface: #121212; /* Material dark surface */
+    --surface-hover: #1e1e1e; /* Slightly lighter on hover */
+    --text: #ffffff; /* Pure white text */
+    --text-light: #aaaaaa; /* Dimmed text */
+    --border: #2a2a2a; /* Subtle borders */
+    --shadow: rgba(0, 0, 0, 0.4); /* Deeper shadows */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 360px;
+    height: 580px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 20px;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.5px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: var(--text);
+}
+
+.icon-btn:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+    border-color: var(--primary);
+}
+
+.icon-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.icon-btn .sound-on,
+.icon-btn .sound-off {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-btn .sound-off {
+    display: none;
+}
+
+.icon-btn.muted .sound-on {
+    display: none;
+}
+
+.icon-btn.muted .sound-off {
+    display: block;
+}
+
+.master-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.reminder-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.reminder-card {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 4px var(--shadow);
+    transition: all 0.2s ease;
+}
+
+.reminder-card:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px var(--shadow);
+    border-color: var(--primary);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: 0.3px;
+}
+
+.progress {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary);
+    transition: width 1s linear;
+    border-radius: 2px;
+}
+
+.interval {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(0, 229, 176, 0.2);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.reminder-card.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.interval {
+    position: relative;
+}
