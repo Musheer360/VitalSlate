@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "VitalSlate",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "An open-source wellness companion with customizable reminders for healthy habits like eye care, movement, and posture.",
   "icons": {
     "16": "icons/icon16.png",
@@ -21,5 +21,10 @@
   "permissions": ["storage", "notifications", "alarms", "background"],
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "author": "Musheer Alam",
+  "homepage_url": "https://github.com/Musheer360/VitalSlate",
+  "short_name": "VitalSlate",
+  "offline_enabled": true,
+  "minimum_chrome_version": "88"
 }
